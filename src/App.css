@@ -1,0 +1,6 @@
+.bg{
+    background-image: url('./assets/BG.png');
+    height: 100vh;
+    overflow-x: scroll;
+
+}

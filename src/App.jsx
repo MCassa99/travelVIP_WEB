@@ -8,6 +8,7 @@ function App() {
     <>
       <div>
         <NavbarComponent/>
+        <div className='bg'></div>
       </div>
     </>
   )
