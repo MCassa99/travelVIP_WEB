@@ -1,14 +1,15 @@
 import { useState } from 'react'
-import NavbarComponent from './components/Navbar.jsx'
 import './App.css'
+import Greeting from './components/Greeting.jsx'
+import NavbarComponent from './components/Navbar.jsx'
+
 
 function App() {
-
   return (
     <>
-      <div>
-        <NavbarComponent/>
-        <div className='bg'></div>
+      <div className='bg'>
+        <NavbarComponent />
+        <Greeting />
       </div>
     </>
   )

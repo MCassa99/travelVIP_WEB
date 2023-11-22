@@ -5,9 +5,9 @@ import logo from '../assets/react.svg'; // Import your logo image
 
 const NavbarComponent = () => {
     return (
-        <Navbar bg="light" expand="md" className="fixed-top">
+        <Navbar bg="light" expand="md" className="mb-4">
             <Container>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand>
                     <img src={logo} alt="Company Logo" />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
