@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import Greeting from './components/Greeting.jsx'
-import NavbarComponent from './components/Navbar.jsx'
+import NavbarComponent from './components/Navbar/Navbar.jsx'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer.jsx'
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <>
       <div className='bg'>
         <NavbarComponent />
-        <Greeting />
+        <ItemListContainer greeting={'Travel VIP Web'} />
       </div>
     </>
   )
