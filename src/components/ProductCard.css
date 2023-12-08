@@ -1,0 +1,14 @@
+.stay{
+    position: relative;
+    top: -.8rem;
+    left: 1rem;
+    background-color: rgb(68, 0, 255);
+    width: fit-content;
+    padding: .2rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    border-radius: .5rem;
+    font-weight: 700;
+    font-size: small;
+    color: white;
+}

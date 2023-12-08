@@ -11,18 +11,16 @@ function App() {
       <div className='bg'>
         <NavbarComponent />
         <ItemListContainer greeting={'Travel VIP Web'} />
-        <ProductCard img='./src/assets/Madrid.webp' title='Madrid' stay='13 Días / 11 Noches'>
-          <p>Desde Vie 22 Mar Hasta Mié 03 Abr</p>
-          <button>Comprar</button>
-        </ProductCard>
-        <ProductCard img='' title='Madrid' stay='13 Días / 11 Noches'>
-          <p>Desde Vie 22 Mar Hasta Mié 03 Abr</p>
-          <button>Comprar</button>
-        </ProductCard>
-        <ProductCard img='' title='Madrid' stay='13 Días / 11 Noches'>
-          <p>Desde Vie 22 Mar Hasta Mié 03 Abr</p>
-          <button>Comprar</button>
-        </ProductCard>
+        <div className='row p-4'>
+          <div className='col-lg-3 col-md-4 col-sm-6 mb-4'>
+            <ProductCard img='./src/assets/Madrid.webp' title='Madrid' stay='13 Días / 11 Noches' price={12354}>
+              <div>
+              </div>
+            </ProductCard>
+          </div>
+          <div className='col-lg-3 col-md-4 col-sm-6 mb-4'><ProductCard img='./src/assets/Madrid.webp' title='Madrid' stay='13 Días / 11 Noches' price={12354}/></div>
+          <div className='col-lg-3 col-md-4 col-sm-6 mb-4'><ProductCard img='./src/assets/Madrid.webp' title='Madrid' stay='13 Días / 11 Noches' price={12354}/></div>
+        </div>
       </div>
     </>
   )
