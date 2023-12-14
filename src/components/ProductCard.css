@@ -1,4 +1,4 @@
-.stay{
+.stay {
     position: relative;
     top: -.8rem;
     left: 1rem;
@@ -11,4 +11,32 @@
     font-weight: 700;
     font-size: small;
     color: white;
+}
+
+@media (min-width: 992px) {
+    .card-img-top {
+        height: 20vw;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 991px) {
+    .card-img-top {
+        height: 25vw;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 767px) {
+    .card-img-top {
+        height: 35vw;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 575px) {
+    .card-img-top {
+        height: 50vw;
+        object-fit: cover;
+    }
 }

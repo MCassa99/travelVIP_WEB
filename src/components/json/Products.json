@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "title": "Viaje a París",
+        "stay": 7,
+        "price": 1000,
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Eiffel_Tower_view_from_Champs-Élysées_-_Paris_-_France.jpg/1200px-Eiffel_Tower_view_from_Champs-Élysées_-_Paris_-_France.jpg",
+        "desc": "Disfruta de la ciudad del amor con este viaje de 7 días a París. Visita la Torre Eiffel, el Museo del Louvre y otros monumentos emblemáticos.",
+        "disp": 20,
+        "cat": "Europa"
+    },
+    {
+        "id": 2,
+        "title": "Vuelo a Londres",
+        "stay": 3,
+        "price": 500,
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/London_-_Tower_Bridge_-_river_Thames.jpg/1200px-London_-_Tower_Bridge_-_river_Thames.jpg",
+        "desc": "Descubre la capital británica en este vuelo de 3 días a Londres. Visita el Big Ben, el Palacio de Buckingham y otros lugares de interés.",
+        "disp": 15,
+        "cat": "Europa"
+    },
+    {
+        "id": 3,
+        "title": "Vacaciones en Roma",
+        "stay": 10,
+        "price": 2000,
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Roman_Forum_-_Rome_-_Italy.jpg/1200px-Roman_Forum_-_Rome_-_Italy.jpg",
+        "desc": "Disfruta de una escapada a Roma con este viaje de 10 días. Visita el Coliseo, el Foro Romano y otros monumentos históricos.",
+        "disp": 25,
+        "cat": "Europa"
+    },
+    {
+        "id": 4,
+        "title": "Fin de semana en Barcelona",
+        "stay": 2,
+        "price": 300,
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Barcelona_-_Sagrada_Família.jpg/1200px-Barcelona_-_Sagrada_Família.jpg",
+        "desc": "Relájate en la ciudad condal con este fin de semana en Barcelona. Visita la Sagrada Familia, la Pedrera y otros lugares emblemáticos.",
+        "disp": 10,
+        "cat": "Europa"
+    },
+    {
+        "id": 5,
+        "title": "Playa en Cancún",
+        "stay": 7,
+        "price": 1500,
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Cancún-Playa_del_Carmen_-_Mexico.jpg/1200px-Cancún-Playa_del_Carmen_-_Mexico.jpg",
+        "desc": "Disfruta del sol y la playa en este viaje de 7 días a Cancún. Relájate en las hermosas playas de Cancún y Tulum.",
+        "disp": 20,
+        "cat": "América"
+    },
+    {
+        "id": 6,
+        "title": "Viaje a la ciudad de Nueva York",
+        "stay": 7,
+        "price": 2000,
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Times_Square_at_night_-_New_York_City.jpg/1200px-Times_Square_at_night_-_New_York_City.jpg",
+        "desc": "Disfruta de la bulliciosa ciudad de Nueva York en este viaje de 7 días. Visita el Empire State Building, Times Square y otros lugares emblemáticos.",
+        "disp": 15,
+        "cat": "América"
+    },
+    {
+        "id": 7,
+        "title": "Vacaciones en Bali",
+        "stay": 10,
+        "price": 3000,
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Uluwatu_Temple_-_Bali.jpg/1200px-Uluwatu_Temple_-_Bali.jpg",
+        "desc": "Relájate en las hermosas playas de Bali en este viaje de 10 días. Visita los templos de Uluwatu y Tanah Lot y disfruta de la cultura balinesa.",
+        "disp": 25,
+        "cat": "Asia"
+    },
+    {
+        "id": 8,
+        "title": "Safari en Tanzania",
+        "stay": 5,
+        "price": 5000,
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Serengeti_National_Park_-_Tanzania.jpg/1200px-Serengeti_National_Park_-_Tanzania.jpg",
+        "desc": "Observa la vida salvaje africana en este safari de 5 días a Tanzania. Disfruta de la oportunidad de ver leones, elefantes, jirafas y otros animales en su hábitat natural.",
+        "disp": 10,
+        "cat": "África"
+    },
+    {
+        "id": 9,
+        "title": "Crucero por el Caribe",
+        "stay": 7,
+        "price": 4000,
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Cruise_ship_in_the_Caribbean.jpg/1200px-Cruise_ship_in_the_Caribbean.jpg",
+        "desc": "Relájate en las hermosas playas del Caribe en este crucero de 7 días. Visita las islas de Cozumel, Roatán y otros destinos turísticos.",
+        "disp": 20,
+        "cat": "América"
+    },
+    {
+        "id": 10,
+        "title": "Viaje a Japón",
+        "stay": 10,
+        "price": 3500,
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Tokyo_at_night.jpg/1200px-Tokyo_at_night.jpg",
+        "desc": "Descubre la cultura única de Japón en este viaje de 10 días. Visita Tokio, Kioto y otros lugares emblemáticos.",
+        "disp": 20,
+        "cat": "Asia"
+    }
+]

@@ -1,14 +1,16 @@
 import "./ProductCard.css";
 
-const ProductCard = ({ img, title, stay, price, children }) => {
+const ProductCard = ({ destino, children }) => {
+  const {id, title, stay, price, img, desc, disp, cat} = destino;
+
   return (
-    <div class="card round-5">
+    <div className="card round-5">
       <div>
-        <img src="https://imgur.com/edOjtEC.png" className="card-img-top" />
+        <img src={img} className="card-img-top" />
       </div>
-      <span className="stay">{stay}</span>
+      <span className="stay">{stay} Dias / {stay-1} Noches</span>
       <div>
-        <h3 className="text-center">{title}</h3>
+        <h5 className="text-center">{title}</h5>
         <div className="card-body">{children}</div>
       </div>
     </div>
