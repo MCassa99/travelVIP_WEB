@@ -1,3 +1,15 @@
 .bg {
-  background-color: rgb(93, 90, 99);
+  background-color: #1B98E0;
+}
+
+.greeting{
+  color: #E8F1F2;
+}
+
+.cart{
+  color: #E8F1F2;
+}
+
+.navbutton{
+  color: #E8F1F2 !important;
 }

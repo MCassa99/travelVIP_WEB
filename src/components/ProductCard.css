@@ -2,7 +2,7 @@
     position: relative;
     top: -.8rem;
     left: 1rem;
-    background-color: rgb(68, 0, 255);
+    background-color: #006494;
     width: fit-content;
     padding: .2rem;
     padding-left: .5rem;
@@ -10,7 +10,7 @@
     border-radius: .5rem;
     font-weight: 700;
     font-size: small;
-    color: white;
+    color: #E8F1F2;
 }
 
 @media (min-width: 992px) {

@@ -2,7 +2,7 @@ import { Nav } from 'react-bootstrap';
 
 const Button = ({ href, name }) => {
     return (
-        <Nav.Link href={href}>{name}</Nav.Link>
+        <Nav.Link className='navbutton' href={href}>{name}</Nav.Link>
     );
 };
 
