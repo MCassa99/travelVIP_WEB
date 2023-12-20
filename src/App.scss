@@ -1,0 +1,78 @@
+/* Colors */
+$primary: #1b98e0;
+$secondary: #e8f1f2;
+$alternative: #006494;
+
+//////////////////////////////
+//          APP SCSS        //
+//////////////////////////////
+
+html {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  overflow-x: hidden;
+}
+
+.bg {
+  background-color: $primary;
+  height: 100;
+}
+
+.navbar{
+  background-color: $alternative;
+  color: $secondary;
+}
+
+.greeting, .cart, .navbutton{
+  color: $secondary;
+}
+
+//////////////////////////////
+//    PRODUCT CARDS SCSS    //
+//////////////////////////////
+
+.stay {
+  position: relative;
+  top: -.8rem;
+  left: 1rem;
+  background-color: $alternative;
+  width: fit-content;
+  padding: .2rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  border-radius: .5rem;
+  font-weight: 700;
+  font-size: small;
+  color: $secondary;
+}
+
+.card-img-top {
+  height: 20vw;
+  object-fit: cover;
+  @media (max-width: 991px) {
+    height: 25vw;
+  }
+  @media (max-width: 767px) {
+    height: 35vw;
+  }
+  @media (max-width: 575px) {
+    height: 50vw;
+  }
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.card-footer{
+  margin-top: -1rem;
+}
+
+.hoverProduct{
+  background-color: $alternative;
+  color: $secondary;
+}

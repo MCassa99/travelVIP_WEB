@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-const Contador = () => {
+const itemCount = () => {
     const[contador, setContador] = useState(0)
 
     const handleClick = (o) =>{

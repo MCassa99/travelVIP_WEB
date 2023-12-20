@@ -1,37 +1,31 @@
-import { useState } from 'react'
-import './App.css'
-import NavbarComponent from './components/Navbar/Navbar.jsx'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer.jsx'
-import ProductsContainer from './components/ProductsContainer.jsx'
-
-
-const getDestinos = () => {
-  return new Promise ((resolve, reject) => {
-    setTimeout(() => {
-      resolve(destinos);
-    }, 3000);
-  });
-}
-
-async function awaitDestinos() {
-  try {
-    const destinosAwait = await getDestinos();
-    console.log(destinosAwait);
-  } catch (error) {
-    console.log(error);
-  }
-}
+import "./App.scss"; // Se importan estilos de scss
+import { BrowserRouter, Routes, Route } from "react-router-dom"; // Se importan las rutas
+import Home from "./components/Home/Home.jsx"; // Se importa el componente Home
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer.jsx"; // Se importa el componente ItemListContainer
+import NavbarComponent from "./components/Navbar/Navbar.jsx"; // Se importa el componente Navbar
+import Error from "./components/Error/Error.jsx"; // Se importa el componente Error
+import ProductDetailContainer from "./components/ProductDetailContainer/ProductDetailContainer.jsx";
 
 function App() {
   return (
-    <>
-      <div className='bg'>
+    <div className="bg">
+      <BrowserRouter>
         <NavbarComponent />
-        <ItemListContainer greeting={'Travel VIP Web'} />
-        <ProductsContainer/>
-      </div>
-    </>
-  )
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/travelvip" element={<ItemListContainer />} />
+          <Route path="/category/:id" element={<ItemListContainer />} />
+          <Route path="/destino/:id" element={<ProductDetailContainer />} />
+          <Route path="/cotizador" element={<Home />} />
+          <Route path="/cart" element={<Home />} />
+          <Route path="/profile" element={<Home />} />
+          <Route path="/settings" element={<Home />} />
+          <Route path="/logout" element={<Home />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
 
-export default App
+export default App;

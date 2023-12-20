@@ -12,7 +12,6 @@ const StarRating = ({ rating }) => {
 
   return (
     <div className="rating">
-      <div className="p-2 rating-number" style={{ backgroundColor: "green" }}>{rating}</div>
       <div>
         {displayedStars.map((_, index) => (
           <span key={index} className="text-warning"><IoStar /></span>
