@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const NavbarComponent = () => {
     return (
         <>
-            <Navbar expand="md" className="mb-4">
+            <Navbar expand="md" className="">
                 <Container>
                     <Link to="/">
                         <Navbar.Brand>

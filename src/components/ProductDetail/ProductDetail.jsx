@@ -1,35 +1,39 @@
-import React from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const ProductDetail = ({ product, children }) => {
+const ProductDetail = ({ destino, children }) => {
   const { id, title, stay, rating, price, img, desc, disp, cat } = destino;
 
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  };
+
   return (
-      <div
-        className="card round-5"
-        onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut}
-        style={{ cursor: "pointer" }}
-      >
-        <div>
-          <img src={img} className="card-img-top" />
+    <>
+      <div className="background-details">
+        <div className="product-content">
+          <div className="h-75 detail-img" style={{ backgroundImage: `url(${img})`, backgroundRepeat: 'no-repeat' }}>
+          <p className="price"> desde ${price}.00 </p>
+          <p className="detail-stay"> {stay} Dias / {stay - 1} Noches</p>
+          <p className="Regisha-3 color-s"> Presentamos </p>
+          <p className="Regisha-6 color-s" style={{ marginTop: -3.5 + 'rem' }}> {title.toUpperCase()} </p>
+          <p className="w-25 color-s description"> {desc} </p>
+          <button className="btn btn-primary px-5 mt-4">Cotizar</button>
         </div>
-        <span className="stay">
-          {stay} Dias / {stay - 1} Noches
-        </span>
-        <div>
-          <h5 className="text-center">
-            {title}
-            <StarRating rating={rating} />
-          </h5>
-          <div className="card-body">{children}</div>
-          <div className="card-footer">
-            <div className="d-flex align-items-center justify-content-center">
-              Más Información
-              {isHovering && <div style={{ marginLeft: 1 + "rem" }}>➜</div>}
-            </div>
-          </div>
+        <div className="relevent-content ">
+
         </div>
+        </div>
+        
       </div>
+
+    </>
   );
 };
 
