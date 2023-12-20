@@ -1,28 +1,32 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom'
 import Products from '../Json/Products.json'
-
+import ProductDetailList from '../ProductDetailList/ProductDetailList';
 
 const ProductDetailContainer = () => {
+    
     const [product, setProduct] = useState([]);
     const { id } = useParams();
     
     useEffect(() => {
-        const promesa = new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(id ? Products.find(item => item.id === parseInt(id)) : Products);
-            }, 2000);
-        });
-        promesa.then((data) => setProduct(data));
+        const getProducts = async() => {
+        try {
+            const data = await new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(id ? Products.find(item => item.id === parseInt(id)) : Products);
+                }, 0);
+            });
+        setProduct(data);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    getProducts();
     }, [id]);
 
     return (
         <div>
-            <div className='d-flex align-items-center justify-content-center'>
-                <h2 className='greeting'>{greeting}</h2>
-            </div>
-            <div>
-                <ItemList product={product} />
-            </div>
+            <ProductDetailList product={product} />
         </div>
     )
 }

@@ -3,6 +3,13 @@ $primary: #1b98e0;
 $secondary: #e8f1f2;
 $alternative: #006494;
 
+@font-face {
+  font-family: "Regisha";
+  src: local("Regisha"),
+   url("./assets/fonts/Regisha.otf") format("truetype");
+  font-weight: bold;
+ }
+
 //////////////////////////////
 //          APP SCSS        //
 //////////////////////////////
@@ -68,6 +75,12 @@ html {
   -ms-user-select: none;
 }
 
+.detail-img {
+  min-height: 75vh;
+  max-height: 75vh;
+  background-size: 100vw;
+}
+
 .card-footer{
   margin-top: -1rem;
 }
@@ -75,4 +88,59 @@ html {
 .hoverProduct{
   background-color: $alternative;
   color: $secondary;
+}
+
+//////////////////////////////
+//    DETAILS CARD  SCSS    //
+//////////////////////////////
+
+.price{
+  font-family: "Regisha";
+  font-weight: 700;
+  font-size: xx-large;
+  color: $primary;
+}
+
+.detail-stay {
+  margin-top: -1.5rem;
+  font-weight: 600;
+  background-color: $alternative;
+  width: fit-content;
+  padding: .2rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  border-radius: .5rem;
+  color: $secondary;
+}
+
+.Regisha-3{
+  font-family: "Regisha";
+  font-size: 3rem;
+}
+
+.Regisha-6{
+  font-family: "Regisha";
+  font-size: 6rem;
+}
+
+.color-s{
+  color: $secondary;
+}
+
+.description{
+  margin-top: -1rem;
+}
+
+.product-content{
+  padding: 5rem;
+  padding-top: 10rem;
+}
+
+.relevant-content{
+
+}
+
+.background-details{
+  height: calc(100vh - 3.6rem);
+  background-color: $primary;
 }
