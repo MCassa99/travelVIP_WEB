@@ -1,57 +1,54 @@
+import React from "react";
 import styled from "styled-components";
-import StarRating from "../Item/StarRating";
+import homeImage from "../../assets/heroBG.jpg";
 
-const ProductDetail = ({ destino, children }) => {
-  const { id, title, stay, rating, price, img, desc, disp, cat } = destino;
-
-  let botonWpp = () => {
-    let mensaje = `Hola TravelVIP ! Me contacto porque queria averiguar por una cotizacion a ${title}  por la cantidad de ${stay} dias. Muchas Gracias!`;
-    let telefono = "+59896327431";
-    let url = `https://api.whatsapp.com/send?phone=${telefono}&text=${mensaje}&source=&data=`;
-    window.open(url, "_blank", "noreferrer");
-  }
-
+export default function Hero() {
   return (
-    <>
-      <Section id="hero">
-        <div className="background">
-          <img src={img} alt="" />
+    <Section id="hero">
+      <div className="background">
+        <img src={homeImage} alt="" />
+      </div>
+      <div className="content">
+        <div className="title">
+          <h1>TRAVEL VIP</h1>
+          <p>
+            Nuestro destino nunca es un lugar, sino una nueva forma de ver las cosas!
+          </p>
         </div>
-        <div className="content">
-          <div className="title">
-            <h1 className="mb-3">{title}</h1>
-            <span className="stay mt-5">
-              {stay} Dias / {stay - 1} Noches
-            </span>
-            <p> {desc} </p>
-            <p> <StarRating rating={rating} /> </p>
-            <p> Desde ${price} </p>
+        {/* <div className="search">
+          <div className="container">
+            <label htmlFor="">Where you want to go</label>
+            <input type="text" placeholder="Search Your location" />
           </div>
-          <div>
-            <button className="btn btn-lg btn-primary" onClick={botonWpp}>Contactarme</button>
+          <div className="container">
+            <label htmlFor="">Check-in</label>
+            <input type="date" />
           </div>
-        </div>
-      </Section>
-    </>
+          <div className="container">
+            <label htmlFor="">Check-out</label>
+            <input type="date" />
+          </div>
+          <button>Explore Now</button>
+        </div> */}
+      </div>
+    </Section>
   );
-};
-
-export default ProductDetail;
+}
 
 const Section = styled.section`
   position: relative;
   width: 100%;
   height: 100;
-
+  
   .background {
     height: 100;
     img {
       width: 100%;
-      filter: brightness(40%);
+      filter: brightness(60%);
     }
   }
   .content {
-    height: 70%;
+    height: 90%;
     width: 100%;
     position: absolute;
     top: 0;

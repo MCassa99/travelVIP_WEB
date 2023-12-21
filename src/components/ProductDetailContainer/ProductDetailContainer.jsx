@@ -14,7 +14,7 @@ const ProductDetailContainer = () => {
             const data = await new Promise((resolve) => {
                 setTimeout(() => {
                     resolve(id ? Products.find(item => item.id === parseInt(id)) : Products);
-                }, 0);
+                }, 1500);
             });
         setProduct(data);
         } catch (error) {
