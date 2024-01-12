@@ -1,34 +1,58 @@
 import styled from "styled-components";
 import StarRating from "../Item/StarRating";
+import { Link } from "react-router-dom";
+import { IoPersonAddSharp } from "react-icons/io5";
+import { TiMinus } from "react-icons/ti";
+import { FaPlus } from "react-icons/fa6";
+
+import { useState } from "react";
+
 
 const ProductDetail = ({ destino, children }) => {
-  const { id, title, stay, rating, price, img, desc, disp, cat } = destino;
 
-  let botonWpp = () => {
-    let mensaje = `Hola TravelVIP ! Me contacto porque queria averiguar por una cotizacion a ${title}  por la cantidad de ${stay} dias. Muchas Gracias!`;
-    let telefono = "+59896327431";
-    let url = `https://api.whatsapp.com/send?phone=${telefono}&text=${mensaje}&source=&data=`;
-    window.open(url, "_blank", "noreferrer");
-  }
+  const [ itemQuantity, setItemQuantity ] = useState(1);
+  const { id, title, stay, rating, price, img, desc, people, cat } = destino;
+
+  let increment = () => {
+    if (itemQuantity < people) {
+      setItemQuantity(itemQuantity + 1);
+    }
+  };
+
+  let decrement = () => {
+    if (itemQuantity > 1) {
+      setItemQuantity(itemQuantity - 1);
+    }
+  };
 
   return (
     <>
-      <Section id="hero">
+      <Section id="hero" >
         <div className="background">
           <img src={img} alt="" />
         </div>
-        <div className="content">
+        <div className="content" style={{ marginTop: 6 + 'rem' }}>
           <div className="title">
             <h1 className="mb-3">{title}</h1>
             <span className="stay mt-5">
               {stay} Dias / {stay - 1} Noches
             </span>
             <p> {desc} </p>
-            <p> <StarRating rating={rating} /> </p>
+            <span> <StarRating rating={rating} /> </span>
             <p> Desde ${price} </p>
+            <div>
+              <button className="btn btn-danger btn-number" onClick={decrement}><TiMinus /></button>
+              <div className="d-inline p-2 border border-white rounded mx-2">
+                <IoPersonAddSharp />
+                <span> {itemQuantity} / {people} </span>
+              </div>
+              <button className="btn btn-success btn-number" onClick={increment}><FaPlus /></button>
+            </div>
           </div>
           <div>
-            <button className="btn btn-lg btn-primary" onClick={botonWpp}>Contactarme</button>
+            <Link to={`/process/${id}/${itemQuantity}`} className="text-decoration-none">
+              <button className="btn btn-lg btn-primary">Contactarme</button>
+            </Link>
           </div>
         </div>
       </Section>
@@ -44,8 +68,10 @@ const Section = styled.section`
   height: 100;
 
   .background {
-    height: 100;
+    height: 100%;
     img {
+      object-fit: cover;
+      height: calc(100vh - 4.2rem);
       width: 100%;
       filter: brightness(40%);
     }

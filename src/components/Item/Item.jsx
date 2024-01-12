@@ -3,6 +3,7 @@ import StarRating from "./StarRating";
 import { Link } from "react-router-dom";
 
 const Item = ({ destino, children }) => {
+  
   const { id, title, stay, rating, price, img, desc, disp, cat } = destino;
 
   const [isHovering, setIsHovering] = useState(false);

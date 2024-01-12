@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import homeImage from "../../assets/heroBG.jpg";
 
-export default function Error() {
+export default function EnConstruccion() {
   return (
     <Section id="hero">
       <div className="background">
@@ -10,11 +10,26 @@ export default function Error() {
       </div>
       <div className="content">
         <div className="title">
-          <h1 className="text-danger bg-light">ERROR 404</h1>
+          <h1 className="text-warning bg-dark p-2">EN CONSTRUCCION</h1>
           <p>
-            La página que estás buscando no existe! O está en construcción...
+            La página que estás buscando esta en Construccion!
           </p>
         </div>
+        {/* <div className="search">
+          <div className="container">
+            <label htmlFor="">Where you want to go</label>
+            <input type="text" placeholder="Search Your location" />
+          </div>
+          <div className="container">
+            <label htmlFor="">Check-in</label>
+            <input type="date" />
+          </div>
+          <div className="container">
+            <label htmlFor="">Check-out</label>
+            <input type="date" />
+          </div>
+          <button>Explore Now</button>
+        </div> */}
       </div>
     </Section>
   );

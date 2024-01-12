@@ -43,6 +43,7 @@ const Section = styled.section`
   .background {
     height: 100;
     img {
+      height: calc(100vh - 4.2rem);
       width: 100%;
       filter: brightness(60%);
     }

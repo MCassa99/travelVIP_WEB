@@ -8,7 +8,8 @@
         "img": "https://elpachinko.com/wp-content/uploads/2019/03/10-lugares-imprescindibles-que-visitar-en-Par%C3%ADs.jpg",
         "desc": "Disfruta de la ciudad del amor con este viaje de 7 días a París. Visita la Torre Eiffel, el Museo del Louvre y otros monumentos emblemáticos.",
         "disp": 20,
-        "cat": "paquetes"
+        "cat": "paquetes",
+        "people": 8
     },
     {
         "id": 2,
@@ -19,7 +20,8 @@
         "img": "https://www.iese.edu/es/insight/wp-content/uploads/sites/4/2022/11/Londres-Cities-in-motion-1024-alto.jpg",
         "desc": "Descubre la capital británica en este vuelo de 3 días a Londres. Visita el Big Ben, el Palacio de Buckingham y otros lugares de interés.",
         "disp": 15,
-        "cat": "vuelos"
+        "cat": "vuelos",
+        "people": 1
     },
     {
         "id": 3,
@@ -27,10 +29,11 @@
         "stay": 10,
         "price": 2000,
         "rating": 10,
-        "img": "https://static.nationalgeographic.es/files/styles/image_3200/public/colosseum-daylight-rome-italy.jpg?w=1600&h=900",
+        "img": "https://static.nationalgeographic.es/files/styles/image_3200/public/colosseum-daylight-rome-italy.jpg",
         "desc": "Disfruta de una escapada a Roma con este viaje de 10 días. Visita el Coliseo, el Foro Romano y otros monumentos históricos.",
         "disp": 25,
-        "cat": "paquetes"
+        "cat": "paquetes",
+        "people": 8
     },
     {
         "id": 4,
@@ -38,10 +41,11 @@
         "stay": 2,
         "price": 300,
         "rating": 7.5,
-        "img": "https://estaticos-cdn.prensaiberica.es/clip/54c5acf5-7c48-4c55-b37c-8603d9556e3f_alta-aspect-ratio_default_0.jpg",
+        "img": "https://estaticos-cdn.prensaiberica.es/clip/54c5acf5-bd9d2cd2c-4c55-b37c-8da3d925e3f.jpg",
         "desc": "Relájate en la ciudad condal con este fin de semana en Barcelona. Visita la Sagrada Familia, la Pedrera y otros lugares emblemáticos.",
         "disp": 10,
-        "cat": "vuelos"
+        "cat": "vuelos",
+        "people": 1
     },
     {
         "id": 5,
@@ -52,7 +56,8 @@
         "img": "https://blog.vivaaerobus.com/wp-content/uploads/2019/12/Mejores-Playas-de-Canc%C3%BAn.jpg",
         "desc": "Disfruta del sol y la playa en este viaje de 7 días a Cancún. Relájate en las hermosas playas de Cancún y Tulum.",
         "disp": 20,
-        "cat": "hoteles"
+        "cat": "hoteles",
+        "people": 4
     },
     {
         "id": 6,
@@ -63,7 +68,8 @@
         "img": "https://media.staticontent.com/media/pictures/bfb80462-7604-4711-8bfb-576e01508817",
         "desc": "Disfruta de la bulliciosa ciudad de Nueva York en este viaje de 7 días. Visita el Empire State Building, Times Square y otros lugares emblemáticos.",
         "disp": 15,
-        "cat": "hoteles"
+        "cat": "hoteles",
+        "people": 2
     },
     {
         "id": 7,
@@ -71,10 +77,11 @@
         "stay": 10,
         "price": 3000,
         "rating": 10.0,
-        "img": "https://imageio.forbes.com/specials-images/imageserve/650bbc48bd9d2cd2f2da346e/pura-ulun-danu-bratan-temple-in-Bali-/0x0.jpg?format=jpg&height=1256&width=1888",
+        "img": "https://imageio.forbes.com/specials/images/imageserve/650bbc48bd9d2cd2c-4c55-b346e/pura-ulun-danu-bratan-temple-in-bali-/0x0.jpg?format=jpg&height=1256&width=1888",
         "desc": "Relájate en las hermosas playas de Bali en este viaje de 10 días. Visita los templos de Uluwatu y Tanah Lot y disfruta de la cultura balinesa.",
         "disp": 25,
-        "cat": "paquetes"
+        "cat": "paquetes",
+        "people": 8
     },
     {
         "id": 8,
@@ -85,7 +92,8 @@
         "img": "https://www.state.gov/wp-content/uploads/2018/11/Tanzania-e1555938157355-2501x1406.jpg",
         "desc": "Observa la vida salvaje africana en este safari de 5 días a Tanzania. Disfruta de la oportunidad de ver leones, elefantes, jirafas y otros animales en su hábitat natural.",
         "disp": 10,
-        "cat": "paquetes"
+        "cat": "paquetes",
+        "people": 4
     },
     {
         "id": 9,
@@ -96,7 +104,8 @@
         "img": "https://mejorepocapara.net/wp-content/uploads/2018/03/cual-es-la-mejor-epoca-para-hacer-un-crucero-por-el-caribe.jpg",
         "desc": "Relájate en las hermosas playas del Caribe en este crucero de 7 días. Visita las islas de Cozumel, Roatán y otros destinos turísticos.",
         "disp": 20,
-        "cat": "paquetes"
+        "cat": "paquetes",
+        "people": 4
     },
     {
         "id": 10,
@@ -107,6 +116,7 @@
         "img": "https://humanidades.com/wp-content/uploads/2017/07/japon-7-e1571188423405-800x415.jpg",
         "desc": "Descubre la cultura única de Japón en este viaje de 10 días. Visita Tokio, Kioto y otros lugares emblemáticos.",
         "disp": 20,
-        "cat": "paquetes"
+        "cat": "paquetes",
+        "people": 8
     }
 ]
