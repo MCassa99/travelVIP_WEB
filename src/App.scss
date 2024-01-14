@@ -157,3 +157,24 @@ html {
 .cart-text{
   margin-top: -1rem;
 }
+
+.cart-card{
+  z-index: 0;
+  position: relative;
+}
+
+.cart-button{
+  z-index: 1;
+  position: relative;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  text-align: center;
+  margin-bottom: -7.5rem;
+  margin-left: 1.5rem;
+}
+
+body.swal2-shown > [aria-hidden='true'] {
+  transition: 0.1s filter;
+  filter: blur(3px);
+}

@@ -4,6 +4,7 @@ import Products from '../Json/Products.json'
 import wppLogo from '../../assets/WhatsApp_icon.webp'
 import agentLogo from '../../assets/Agent_icon.png'
 import { useCartContext } from '../CartContext/CartContext';
+import CartPassangerForm from '../CartPassengerForm/CartPassengerForm';
 
 const ProcessPurchase = () => {
 
@@ -36,6 +37,33 @@ const ProcessPurchase = () => {
         window.open(url, "_blank", "noreferrer");
     }
 
+    let information = [];
+
+    function renderinfo() {
+        for (let i = 0; i < qty; i++) {
+            let nombre = document.getElementById(`nombre${i+1}`).value;
+            let apellido = document.getElementById(`apellido${i+1}`).value;
+            let tipoDocumento = document.getElementById(`tipoDocumento${i+1}`).value;
+            let documento = document.getElementById(`documento${i+1}`).value;
+            let fechaNacimiento = document.getElementById(`fechaNacimiento${i+1}`).value;
+            let celular = document.getElementById(`celular${i+1}`).value;
+            let mail = document.getElementById(`mail${i+1}`).value;
+            let pasajero = {
+                nombre: nombre,
+                apellido: apellido,
+                tipoDocumento: tipoDocumento,
+                documento: documento,
+                fechaNacimiento: fechaNacimiento,
+                celular: celular,
+                mail: mail
+            }
+            console.log(pasajero);
+            information.push(pasajero);
+            console.log('information');
+            console.log(information);
+        }
+    }
+
     return (
         <div>
             <h2 className='d-flex justify-content-center mt-5 mb-3'>Aqui se Redireccionara a el Usuario a Whatsapp para Concretar con un Operador</h2>
@@ -49,7 +77,16 @@ const ProcessPurchase = () => {
                 <div className='d-flex flex-column justify-content-center align-items-center'>
                     <span>Validar Destino</span>
                     <span className='mb-3'><strong>(*Este paso lo dara el Agente luego de concretar todo por WhatsApp*)</strong></span>
-                    <button className='btn btn-primary mb-4' onClick={() => {addToCart({product},qty)}}><img style={{ width: 40, marginRight: 10 }} src={agentLogo} /><strong>Habilitar Destino</strong></button>
+                    {/* <span className='mb-3'><strong>Una vez validado el destino, se habilitara el boton para agregar al carrito</strong></span> */}
+                    <div className='d-flex flex-column justify-content-start mb-4'>
+                        {Array.from({ length: qty }, (_, index) => (
+                            <div key={index}>
+                                <h5>Pasajero {index+1}</h5>
+                                <CartPassangerForm id={index+1}/>
+                            </div>
+                        ))}
+                    </div>
+                    <button className='btn btn-primary mb-4' onClick={() => {renderinfo(), addToCart({product},qty,information)}}><img style={{ width: 40, marginRight: 10 }} src={agentLogo} /><strong>Habilitar Destino</strong></button>
                 </div>
             </div>
             <div>

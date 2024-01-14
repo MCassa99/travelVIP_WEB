@@ -22,6 +22,7 @@
         "disp": 15,
         "cat": "vuelos",
         "people": 1
+        
     },
     {
         "id": 3,
@@ -41,7 +42,7 @@
         "stay": 2,
         "price": 300,
         "rating": 7.5,
-        "img": "https://estaticos-cdn.prensaiberica.es/clip/54c5acf5-bd9d2cd2c-4c55-b37c-8da3d925e3f.jpg",
+        "img": "https://estaticos-cdn.prensaiberica.es/clip/54c5acf5-7c48-4c55-b37c-8603d9556e3f_alta-aspect-ratio_default_0.webp",
         "desc": "Relájate en la ciudad condal con este fin de semana en Barcelona. Visita la Sagrada Familia, la Pedrera y otros lugares emblemáticos.",
         "disp": 10,
         "cat": "vuelos",
@@ -77,7 +78,7 @@
         "stay": 10,
         "price": 3000,
         "rating": 10.0,
-        "img": "https://imageio.forbes.com/specials/images/imageserve/650bbc48bd9d2cd2c-4c55-b346e/pura-ulun-danu-bratan-temple-in-bali-/0x0.jpg?format=jpg&height=1256&width=1888",
+        "img": "https://viajeronomada.com/wp-content/uploads/2022/06/dondealojarseenbali-800x534.jpg",
         "desc": "Relájate en las hermosas playas de Bali en este viaje de 10 días. Visita los templos de Uluwatu y Tanah Lot y disfruta de la cultura balinesa.",
         "disp": 25,
         "cat": "paquetes",

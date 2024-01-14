@@ -10,8 +10,8 @@ const CartProvider = ({ children }) => {
 
     // En el addToCart la estrategia elegida es otra, pero con fines practicos sera usada como en las clases
     // Aqui lo que se va a buscar es poder Separar el carrito por viajes.
-    const addToCart = (item, people) => {
-
+    const addToCart = (item, people, information) => {
+        console.log(information);
         const isItemInCart = cartItems.find((cartItem) => cartItem.product.id === item.product.id);
 
         if (isItemInCart) {
@@ -20,7 +20,7 @@ const CartProvider = ({ children }) => {
                 cartItems.map((cartItem) => // if the item is already in the cart, increase the quantity of the item
                 {
                     if (cartItem.product.id === item.product.id && cartItem.people < cartItem.product.people) {
-                        return { ...cartItem, people: parseInt(cartItem.people) + 1 }
+                        return { ...cartItem, people: parseInt(cartItem.people) + 1}
                     // } else if (cartItem.id === item.id) {
                     //     return { ...cartItem, people: parseInt(cartItem.people) }
                     // SE LE AGREGARA FUNCION PARA CUANDO LLEGUE AL MAXIMO DE PERSONAS,
@@ -32,9 +32,9 @@ const CartProvider = ({ children }) => {
                 )
             );
         } else if (parseInt(people) > 0 && parseInt(people) <= item.product.people ) {
-            setCartItems([...cartItems, { ...item, people: parseInt(people) }]); // if the item is not in the cart, add the item to the cart
+            setCartItems([...cartItems, { ...item, people: parseInt(people), information: information }]); // if the item is not in the cart, add the item to the cart
         } else {
-            setCartItems([...cartItems, { ...item, people: 1 }]); // if the item is not in the cart, add the item to the cart
+            setCartItems([...cartItems, { ...item, people: 1, information: information }]); // if the item is not in the cart, add the item to the cart
         }
     };
 
@@ -55,8 +55,8 @@ const removeFromCart = (item) => {
     }
 };
 
-const removeProductFromCart = (item) => {
-    setCartItems(cartItems.filter((product) => product.id === item.id));
+const removeProductFromCart = (itemID) => {
+    setCartItems(cartItems.filter((product) => product.product.id !== itemID));
 };
 
 const clearCart = () => {
@@ -64,7 +64,7 @@ const clearCart = () => {
 };
 
 const getCartTotal = () => {
-    return cartItems.reduce((total, item) => total + item.price * item.people, 0); // calculate the total price of the items in the cart
+    return cartItems.reduce((total, item) => total + item.product.price * item.people, 0); // calculate the total price of the items in the cart
 };
 
 const getCartCount = () => {
