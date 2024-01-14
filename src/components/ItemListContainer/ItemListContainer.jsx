@@ -1,4 +1,4 @@
-import Products from '../Json/Products.json'
+import { collection, getDocs, getFirestore, where, query} from 'firebase/firestore'
 import ItemList from '../ItemList/ItemList'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
@@ -9,19 +9,18 @@ const ItemListContainer = ({greeting}) => {
     const { id } = useParams();
     
     useEffect(() => {
-        const getProducts = async() => {
-        try {
-            const data = await new Promise((resolve) => {
-                setTimeout(() => {
-                    resolve(id ? Products.filter(item => item.cat === id) : Products);
-                }, 1000);
+        const queryDB = getFirestore();
+        const queryCollection = collection(queryDB, 'destino');
+        if (id) {
+            const queryFilter = query(queryCollection, where('cat', '==', id));
+            getDocs(queryFilter).then((response) => {
+                setProduct(response.docs.map((item) => ({...item.data(), id: item.id})));
             });
-        setProduct(data);
-        } catch (error) {
-            console.log(error);
+        } else {
+            getDocs(queryCollection).then((response) => {
+                setProduct(response.docs.map((item) => ({...item.data(), id: item.id})));
+            });
         }
-    };
-    getProducts();
     }, [id]);
 
     return (

@@ -2,11 +2,11 @@ import React from "react";
 import { useCartContext } from "../CartContext/CartContext";
 import ItemCart from "../ItemCart/ItemCart";
 import { Link } from "react-router-dom";
-import Swal from 'sweetalert2'
-
+import Swal from "sweetalert2";
+import Brief from "../Brief/Brief";
 
 const Cart = () => {
-  const { getCartCount, cartItems, getCartTotal } = useCartContext();
+  const { getCartCount, cartItems } = useCartContext();
 
   if (getCartCount() === 0) {
     return (
@@ -30,27 +30,6 @@ const Cart = () => {
     );
   }
 
-
-  function pay() {
-    Swal.fire({
-        title: 'Pasarela de Pago',
-        text: 'Al presionar el boton sera redireccionado a la pasarela de pago segura.',
-        icon: 'success',
-        confirmButtonText: 'Genial!'
-      })
-    new Promise(resolve => setTimeout(resolve, 2000)).then(() => { paySuccess() });
-  }
-
-  function paySuccess() {
-    Swal.fire({
-        title: 'Pago Exitoso',
-        text: 'Su pago fue exitoso, sera redireccionado a la pagina de inicio.',
-        icon: 'success',
-        confirmButtonText: 'Genial!'
-      })
-    new Promise(resolve => setTimeout(resolve, 3000)).then(() => { window.location.href = "/" });
-  }
-
   return (
     <>
       <div className="d-flex justify-content-evenly mt-5">
@@ -67,36 +46,31 @@ const Cart = () => {
         <div className="col-3 bg-light rounded-5 mt-4 h-100 d-inline-block">
           <div className="h-100 p-4 d-flex flex-column justify-content-center">
             <div className="row align-items-start">
-                <h3>Resumen del Pedido</h3>
-                <p className="col">
-                  <strong>Cantidad de Productos: {getCartCount()}</strong>
-                </p>
-                <hr />
+              <h3>Resumen del Pedido</h3>
+              <p className="col">
+                <strong>Cantidad de Productos: {getCartCount()}</strong>
+              </p>
+              <hr />
             </div>
 
             <div className="col">
               {cartItems.map((product) => (
-                <div
-                  key={product.product.id}
-                  className="row justify-content-between"
-                >
-                  <p className="col-auto">{product.product.title}</p>
-                  <p className="col-3">${product.product.price}</p>
+                <div key={product.product.id}>
+                  {console.log(product.product.id)}
+                  {Array.from({ length: product.people }, (_, index) => (
+                    <div key={index+product.product.id}>
+                      <div className="row justify-content-between">
+                        {console.log(index+product.product.id)}
+                        <p className="col-auto">{product.product.title}</p>
+                        <p className="col-3">${product.product.price}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               ))}
             </div>
-            <hr className="mt-5"/>
-            <div className="row justify-content-between">
-              <p className="col-auto">Subtotal:</p>
-              <p className="col-3">${getCartTotal()}</p>
-            </div>
-            <div className="row justify-content-between">
-              <p className="col-auto">Total:</p>
-              <p className="col-3">${getCartTotal() * 1.22}</p>
-            </div>
-            <div className="">
-              <button className="w-100 btn btn-primary" onClick={pay}>PAGAR</button>
-            </div>
+            <hr className="mt-5" />
+            <Brief />
           </div>
         </div>
       </div>

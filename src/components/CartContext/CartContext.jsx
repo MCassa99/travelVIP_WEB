@@ -7,6 +7,8 @@ export const useCartContext = () => useContext(CartContext);
 
 const CartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
+    const [itemQuantity, setItemQuantity] = useState(1);
+
 
     // En el addToCart la estrategia elegida es otra, pero con fines practicos sera usada como en las clases
     // Aqui lo que se va a buscar es poder Separar el carrito por viajes.
@@ -37,7 +39,19 @@ const CartProvider = ({ children }) => {
             setCartItems([...cartItems, { ...item, people: 1, information: information }]); // if the item is not in the cart, add the item to the cart
         }
     };
-
+    
+    const increment = (itemQuantity, itemPeople) => {
+        if (itemQuantity < itemPeople) {
+            setItemQuantitytemQuantity = itemQuantity + 1;
+        }
+      };
+    
+      const decrement = (itemQuantity) => {
+        if (itemQuantity > 1) {
+            setItemQuantitytemQuantity = itemQuantity - 1;
+        }
+      };
+    
 
 const removeFromCart = (item) => {
     const isItemInCart = Products.find((product) => product.id === item.id);
@@ -80,6 +94,8 @@ return (
             clearCart,
             getCartTotal,
             getCartCount,
+            increment,
+            decrement,
             cartItems,
         }}
     >

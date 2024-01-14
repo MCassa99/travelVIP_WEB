@@ -18,12 +18,6 @@ const itemCart = ({ product, qty, information }) => {
     ? (titleClass = "text-center bg-warning rounded-5 p-2 mb-3")
     : (titleClass = "text-center bg-success rounded-5 p-2 mb-3");
 
-    cat === "vuelos"
-    ? ({origin, destination, depdate, arrdate, deptime, arrtime, airline, flight} = product)
-    : cat === "hoteles"
-    ? (titleClass = "text-center bg-warning rounded-5 p-2 mb-3")
-    : (titleClass = "text-center bg-success rounded-5 p-2 mb-3");
-
   let cardFlight = (
     <div>
       <button className="btn btn-danger cart-button">

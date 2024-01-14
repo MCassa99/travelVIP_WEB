@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Item = ({ destino, children }) => {
   
-  const { id, title, stay, rating, price, img, desc, disp, cat } = destino;
+  const { id, title, stay, rating, img } = destino;
 
   const [isHovering, setIsHovering] = useState(false);
 
@@ -28,7 +28,7 @@ const Item = ({ destino, children }) => {
           <img src={img} className="card-img-top" />
         </div>
         <span className="stay">
-          {stay} Dias / {stay - 1} Noches
+          { destino.cat === 'vuelos' ? destino.transshipment : stay } Dias { destino.cat === 'vuelos' ? destino.transshipment <= 1 ? '' : `/ ${destino.transshipment-1} Noches` : stay <= 1 ? '' :  `/ ${stay-1} Noches` }
         </span>
         <div>
           <h5 className="text-center">

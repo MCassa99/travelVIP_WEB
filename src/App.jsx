@@ -4,11 +4,12 @@ import Home from "./components/Hero/Hero.jsx"; // Se importa el componente Home
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer.jsx"; // Se importa el componente ItemListContainer
 import NavbarComponent from "./components/Navbar/Navbar.jsx"; // Se importa el componente Navbar
 import Error from "./components/Error/Error.jsx"; // Se importa el componente Error
-import ProductDetailContainer from "./components/ProductDetailContainer/ProductDetailContainer.jsx";
+import ProductDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer.jsx";
 import EnConstruccion from "./components/EnConstruccion/EnConstruccion.jsx";
 import ProcessPurchase from "./components/ProcessPurchase/ProcessPurchase.jsx";
 import Cart from "./components/Cart/Cart.jsx"
 import CartProvider from "./components/CartContext/CartContext.jsx";
+import CheckOut from "./components/CheckOut/CheckOut.jsx";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               <Route path="/process/:id/:qty" element={<ProcessPurchase />} />
               <Route path="/cotizador" element={<EnConstruccion />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<CheckOut />} />
               <Route path="/profile" element={<Error />} />
               <Route path="/settings" element={<Error />} />
               <Route path="/logout" element={<Error />} />

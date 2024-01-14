@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom'
-import Products from '../Json/Products.json'
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import wppLogo from '../../assets/WhatsApp_icon.webp'
 import agentLogo from '../../assets/Agent_icon.png'
 import { useCartContext } from '../CartContext/CartContext';
@@ -14,19 +14,11 @@ const ProcessPurchase = () => {
     const { id, qty } = useParams();
 
     useEffect(() => {
-        const getProducts = async () => {
-            try {
-                const data = await new Promise((resolve) => {
-                    setTimeout(() => {
-                        resolve(id ? Products.find(item => item.id === parseInt(id)) : Products);
-                    }, 1000);
-                });
-                setProduct(data);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        getProducts();
+        const queryDB = getFirestore();
+        const queryDoc = doc(queryDB, 'destino', id);
+        getDoc(queryDoc).then((response) => {
+            setProduct({id: response.id, ...response.data()});
+        });
     }, [id]);
 
     let botonWpp = () => {
@@ -57,10 +49,7 @@ const ProcessPurchase = () => {
                 celular: celular,
                 mail: mail
             }
-            console.log(pasajero);
             information.push(pasajero);
-            console.log('information');
-            console.log(information);
         }
     }
 
