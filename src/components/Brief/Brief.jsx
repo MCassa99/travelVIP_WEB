@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
-import { useCartContext } from "../CartContext/CartContext";
-import Swal from "sweetalert2";
+import { createPortal } from 'react-dom'
+import { useCartContext } from '../CartContext/CartContext';
+
+import { useState } from 'react'
+import Swal from 'sweetalert2'
 
 const Brief = () => {
   const { getCartTotal } = useCartContext();
@@ -11,11 +14,7 @@ const Brief = () => {
       text: "Al presionar el boton sera redireccionado a la pasarela de pago segura.",
       icon: "success",
       confirmButtonText: "Genial!",
-    });
-    new Promise((resolve) => setTimeout(resolve, 2000)).then(() => {
-      console.log("redirect");
-      <Link to={`/checkout`} />
-    });
+    })
   }
 
   return (
@@ -29,9 +28,9 @@ const Brief = () => {
         <p className="col-3">${getCartTotal() * 1.22}</p>
       </div>
       <div className="">
-        <button className="w-100 btn btn-primary" onClick={pay}>
-          PAGAR
-        </button>
+      <Link to="/checkout">
+        <button onClick={pay} className="w-100 btn btn-primary">PAGAR</button>
+      </Link> 
       </div>
     </div>
   );

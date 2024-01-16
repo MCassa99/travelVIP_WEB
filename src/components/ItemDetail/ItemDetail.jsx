@@ -3,7 +3,7 @@ import StarRating from "../Item/StarRating";
 import { Link } from "react-router-dom";  
 
 import { useState } from "react";
-import ItemCounter from "../ItemCounter/ItemCounter";
+import ItemCounter from "./ItemCounter/ItemCounter";
 
 
 const ProductDetail = ({ destino, children }) => {

@@ -5,6 +5,7 @@ import wppLogo from '../../assets/WhatsApp_icon.webp'
 import agentLogo from '../../assets/Agent_icon.png'
 import { useCartContext } from '../CartContext/CartContext';
 import CartPassangerForm from '../CartPassengerForm/CartPassengerForm';
+import Swal from 'sweetalert2'
 
 const ProcessPurchase = () => {
 
@@ -53,6 +54,7 @@ const ProcessPurchase = () => {
         }
     }
 
+
     return (
         <div>
             <h2 className='d-flex justify-content-center mt-5 mb-3'>Aqui se Redireccionara a el Usuario a Whatsapp para Concretar con un Operador</h2>
@@ -68,7 +70,7 @@ const ProcessPurchase = () => {
                     <span className='mb-3'><strong>(*Este paso lo dara el Agente luego de concretar todo por WhatsApp*)</strong></span>
                     {/* <span className='mb-3'><strong>Una vez validado el destino, se habilitara el boton para agregar al carrito</strong></span> */}
                     <div className='d-flex flex-column justify-content-start mb-4'>
-                        {Array.from({ length: qty }, (_, index) => (
+                        {Array.from({ length: qty ? qty : 1 }, (_, index) => (
                             <div key={index}>
                                 <h5>Pasajero {index+1}</h5>
                                 <CartPassangerForm id={index+1}/>

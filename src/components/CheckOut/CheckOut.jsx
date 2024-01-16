@@ -13,7 +13,7 @@ const CheckOut = ({ children }) => {
 
   const { getCartTotal } = useCartContext();
 
-  function paySuccess() {
+  function success() {
     Swal.fire({
       title: "Pago Exitoso",
       text: "Su pago fue exitoso, sera redireccionado a la pagina de inicio.",
@@ -25,11 +25,28 @@ const CheckOut = ({ children }) => {
     });
   }
 
+  function errorDatos() {
+    Swal.fire({
+      title: "Error",
+      text: "Hubo un error en el pago, por favor verifique los datos ingresados.",
+      icon: "error",
+      confirmButtonText: "Ok",
+    });
+  }
+
+  function paySuccess() {
+    console.log(nombre, apellido, email, telefono, confirmEmail);
+    let verify = nombre != "" && apellido != "" && email != "" && telefono != "" && email == confirmEmail;
+    console.log(verify);
+    verify ? success() : errorDatos();
+    
+  }
+
   return (
     <div className="container w-50 mt-5">
       <div className="row justify-content-center">
         <h2> Complete el formulario para finalizar la compra </h2>
-        <form action="">
+        <form >
           <div className="row">
             <div className="col">
               <label htmlFor="nombre">Nombre</label>
@@ -100,7 +117,7 @@ const CheckOut = ({ children }) => {
                 id="payment"
                 placeholder="Pago"
                 required
-                value={getCartTotal()}
+                value={getCartTotal()*1.22}
                 disabled
               />
             </div>
@@ -110,6 +127,7 @@ const CheckOut = ({ children }) => {
               <button
                 className="btn btn-primary mt-5 w-100"
                 id="payBtn"
+                type="button" 
                 onClick={paySuccess}
               >
                 Pagar
