@@ -2,11 +2,12 @@ import React from "react";
 import { useCartContext } from "../CartContext/CartContext";
 import ItemCart from "../ItemCart/ItemCart";
 import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
 import Brief from "../Brief/Brief";
 
 const Cart = () => {
   const { getCartCount, cartItems } = useCartContext();
+
+  
 
   if (getCartCount() === 0) {
     return (

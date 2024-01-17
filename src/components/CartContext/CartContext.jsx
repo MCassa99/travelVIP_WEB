@@ -1,14 +1,13 @@
 import { useState, useContext, createContext } from "react";
 import Products from '../Json/Products.json'
 
-
 const CartContext = createContext();
 export const useCartContext = () => useContext(CartContext);
 
 const CartProvider = ({ children }) => {
-    const [cartItems, setCartItems] = useState([]);
     const [itemQuantity, setItemQuantity] = useState(1);
-
+    const storedCartItems = localStorage.getItem('cartItems');
+    const [cartItems, setCartItems] = useState(JSON.parse(storedCartItems) || []);
 
     // En el addToCart la estrategia elegida es otra, pero con fines practicos sera usada como en las clases
     // Aqui lo que se va a buscar es poder Separar el carrito por viajes.
@@ -38,6 +37,8 @@ const CartProvider = ({ children }) => {
         } else {
             setCartItems([...cartItems, { ...item, people: 1, information: information }]); // if the item is not in the cart, add the item to the cart
         }
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        console.log(localStorage.getItem('cartItems'));
     };
     
     const increment = (itemQuantity, itemPeople) => {
@@ -75,6 +76,7 @@ const removeProductFromCart = (itemID) => {
 
 const clearCart = () => {
     setCartItems([]); // set the cart items to an empty array
+    localStorage.removeItem('cartItems');
 };
 
 const getCartTotal = () => {

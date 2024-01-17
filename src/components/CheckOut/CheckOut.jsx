@@ -11,7 +11,7 @@ const CheckOut = ({ children }) => {
   const [error, setError] = useState(false);
   const [orderID, setOrderID] = useState("");
 
-  const { getCartTotal } = useCartContext();
+  const { getCartTotal, clearCart } = useCartContext();
 
   function success() {
     Swal.fire({
@@ -21,6 +21,7 @@ const CheckOut = ({ children }) => {
       confirmButtonText: "Genial!",
     });
     new Promise((resolve) => setTimeout(resolve, 3000)).then(() => {
+      clearCart();
       window.location.href = "/";
     });
   }

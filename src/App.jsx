@@ -5,7 +5,6 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer.
 import NavbarComponent from "./components/Navbar/Navbar.jsx"; // Se importa el componente Navbar
 import Error from "./components/Error/Error.jsx"; // Se importa el componente Error
 import ProductDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer.jsx";
-import EnConstruccion from "./components/EnConstruccion/EnConstruccion.jsx";
 import ProcessPurchase from "./components/ProcessPurchase/ProcessPurchase.jsx";
 import Cart from "./components/Cart/Cart.jsx"
 import CartProvider from "./components/CartContext/CartContext.jsx";
@@ -25,12 +24,13 @@ function App() {
               <Route path="/destino/:id" element={<ProductDetailContainer />} />
               <Route path="/process/:id" element={<ProcessPurchase />} />
               <Route path="/process/:id/:qty" element={<ProcessPurchase />} />
-              <Route path="/cotizador" element={<EnConstruccion />} />
+              <Route path="/cotizador" element={<Error />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<CheckOut />} />
               <Route path="/profile" element={<Error />} />
               <Route path="/settings" element={<Error />} />
               <Route path="/logout" element={<Error />} />
+              <Route path="/error/:id" element={<Error />} />
               <Route path="*" element={<Error />} />
             </Routes>
           </CartProvider>

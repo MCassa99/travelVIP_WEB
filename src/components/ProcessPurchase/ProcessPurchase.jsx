@@ -5,7 +5,6 @@ import wppLogo from '../../assets/WhatsApp_icon.webp'
 import agentLogo from '../../assets/Agent_icon.png'
 import { useCartContext } from '../CartContext/CartContext';
 import CartPassangerForm from '../CartPassengerForm/CartPassengerForm';
-import Swal from 'sweetalert2'
 
 const ProcessPurchase = () => {
 
@@ -13,6 +12,10 @@ const ProcessPurchase = () => {
 
     const [product, setProduct] = useState([]);
     const { id, qty } = useParams();
+
+    if (qty > product.people) {
+        window.location.href = `/error/123`;
+    }
 
     useEffect(() => {
         const queryDB = getFirestore();
@@ -53,7 +56,6 @@ const ProcessPurchase = () => {
             information.push(pasajero);
         }
     }
-
 
     return (
         <div>

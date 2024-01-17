@@ -1,8 +1,34 @@
 import React from "react";
 import styled from "styled-components";
 import homeImage from "../../assets/heroBG.jpg";
+import { useParams } from "react-router-dom";
 
 export default function Error() {
+
+  const { id } = useParams();
+
+  let Error = '';
+  let ErrorTitle = '';
+
+  const handleErrors = (id) => {
+    switch (id) {
+      case "404":
+        Error = 'La página que estás buscando no existe! O está en construcción...';
+        break;
+      case "500":
+        Error = 'El destino no fue encontrado!';
+        break;
+      case "123":
+        ErrorTitle = 'CAPACIDAD EXCEDIDA!';
+        Error = 'La cantidad de personas no puede superar la capacidad del destino!';
+        break;
+      default:
+        window.location.href = `/error/404`;
+    }
+  }
+  
+  handleErrors(id);
+
   return (
     <Section id="hero">
       <div className="background">
@@ -10,9 +36,9 @@ export default function Error() {
       </div>
       <div className="content">
         <div className="title">
-          <h1 className="text-danger bg-light">ERROR 404</h1>
+          <h1 className="text-danger bg-light">ERROR {ErrorTitle}</h1>
           <p>
-            La página que estás buscando no existe! O está en construcción...
+            {Error}
           </p>
         </div>
       </div>
